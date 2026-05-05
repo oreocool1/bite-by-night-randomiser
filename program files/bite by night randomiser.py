@@ -15,11 +15,13 @@ update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 10)
 currentDate = datetime.datetime.now()
 if os.path.exists("playerData.txt"):
+       playerDataFile = open("playerData.txt" , "r")
+       playerData = playerDataFile.readlines()
        print("Player Data loaded...")
        time.sleep(1)
 else:
        print("player data not found")
-       playerData = open("playerData.txt", "x")
+       playerDataFile = open("playerData.txt", "x")
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        end = input("click enter to exit")
