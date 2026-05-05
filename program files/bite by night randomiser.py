@@ -26,7 +26,7 @@ else:
        playerDataFile = open("playerData.txt" , "w")
        print("Hi i cant find your player data this means we have to create one please answer these quick questions")
        tempSpring = str(input("Do you have Springtrap| please say 'yes' or 'no'"))
-       tempmimic = str(input("do you have da mimic|please say 'yes' or 'no'"))
+       tempmimic = str(input("do you have the mimic|please say 'yes' or 'no'"))
        tempenared = str(input("do you have enared | please say 'yes' or 'no' "))
        tempSpring = tempSpring.lower()
        tempmimic = tempmimic.lower()
