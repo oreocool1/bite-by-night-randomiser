@@ -31,9 +31,9 @@ currentDate = datetime.datetime.now()
 #        tempSpring = tempSpring.lower()
 #        tempmimic = tempmimic.lower()
 #        tempenared = tempenared.lower()
-#        playerDataFile.writelines("spring:  " + tempSpring + os.linesep)
-#        playerDataFile.writelines("mimic:  " + tempmimic + os.linesep)
-#        playerDataFile.writelines("eneee:  " + tempenared + os.linesep)
+#        playerDataFile.writelines("spring" + tempSpring + os.linesep)
+#        playerDataFile.writelines("mimic" + tempmimic + os.linesep)
+#        playerDataFile.writelines("eneee" + tempenared + os.linesep)
 #        playerDataFile.close()
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
@@ -43,12 +43,19 @@ elif currentDate > hint:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        print ("resuming program")
        time.sleep(1)
+# temp = input ("do you want to delete your player DATA? (yes or no)")
+# temp = temp.lower()
+# if temp == "yes":
+#        if os.path.exists("playerData.txt"):
+#               os.remove("playerData.txt")
+#               quit()
+#        else:
+#               print("ERROR NO FILE EXSITS")
+#               quit()
 while True:
        char = input("do you need killer 'k', surviver's' or both 'b' ")
        char = char.lower()
        correct = False
-       
-              
        if char == "k" or char == "b":
               while correct == False:
                      num = random.randint(1,3)
