@@ -32,10 +32,10 @@ def load():
               count = count + 1
        else:
               Dopplelganger = False
-       print(The_Rotten)
-       print(The_Project)
-       print (Dopplelganger)
-       print(count)
+       # print(The_Rotten)
+       # print(The_Project)
+       # print (Dopplelganger)
+       # print(count)
        if count == 0:
               print("ERROR NO CHARACTERS SELECTED")
               os.remove("KillerData.txt")
