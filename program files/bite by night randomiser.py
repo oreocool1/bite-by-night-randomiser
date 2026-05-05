@@ -3,39 +3,42 @@ import time
 import datetime
 import os
 def load():
-       global spring,playerData,mimic,spagetiMan,count
+       global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
-       playerDataFile = open("playerData.txt")
+       playerDataFile = open("KillerData.txt")
        playerData = playerDataFile.readlines()
        print("Player Data loaded...")
        print(playerData)
        playerDataFile
-       spring = (playerData[0])
-       spring = spring.lower()
-       print(spring)
-       mimic = (playerData[1])
-       print(mimic)
-       spagetiMan = (playerData[2])
-       print(spagetiMan)
+       The_Rotten = (playerData[0])
+       print(The_Rotten)
+       The_Project = (playerData[1])
+       print(The_Project)
+       Dopplelganger = (playerData[2])
+       print(Dopplelganger)
        playerDataFile.close()
-       if spring == "spring unlocked? yes\n":
-              spring = True
+       if The_Rotten == "The Rotten unlocked? yes\n":
+              The_Rotten = True
               count = count + 1
        else:
-              spring = False
-       if mimic == "mimic unlocked? yes\n":
-              mimic = True
+              The_Rotten = False
+       if The_Project == "The Project unlocked? yes\n":
+              The_Project = True
               count = count + 1
        else:
-              mimic = False
-       if spagetiMan == "eneee unlocked? yes\n":
-              spagetiMan = True
+              The_Project = False
+       if Dopplelganger == "Dopplelganger unlocked? yes\n":
+              Dopplelganger = True
               count = count + 1
        else:
-              spagetiMan = False
+              Dopplelganger = False
+       print(The_Rotten)
+       print(The_Project)
+       print (Dopplelganger)
+       print(count)
        if count == 0:
               print("ERROR NO CHARACTERS SELECTED")
-              os.remove("playerData.txt")
+              os.remove("KillerData.txt")
               print("player data deleted restarting")
               time.sleep(1)
               quit()
@@ -53,23 +56,23 @@ print ('''
 update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 10)
 currentDate = datetime.datetime.now()
-if os.path.exists("playerData.txt"):
+if os.path.exists("KillerData.txt"):
        load()
 else:
        print("player data not found")
-       with open("playerData.txt", "x") as playerDataFile:
+       with open("KillerData.txt", "x") as playerDataFile:
              ()
-       playerDataFile = open("playerData.txt" , "w")
+       playerDataFile = open("KillerData.txt" , "w")
        print("Hi i cant find your player data this means we have to create one please answer these quick questions")
-       tempSpring = str(input("Do you have Springtrap| please say 'yes' or 'no'"))
-       tempmimic = str(input("do you have the mimic|please say 'yes' or 'no'"))
-       tempenared = str(input("do you have enared | please say 'yes' or 'no' "))
-       tempSpring = tempSpring.lower()
-       tempmimic = tempmimic.lower()
-       tempenared = tempenared.lower()
-       playerDataFile.writelines("spring unlocked? " + tempSpring + "\n")
-       playerDataFile.writelines("mimic unlocked? " + tempmimic + "\n")
-       playerDataFile.writelines("eneee unlocked? " + tempenared + "\n")
+       tempThe_Rotten = str(input("Do you have The Rotten| please say 'yes' or 'no'"))
+       tempThe_Project = str(input("do you have The Project|please say 'yes' or 'no'"))
+       tempDopplelganger = str(input("do you have Dopplelganger | please say 'yes' or 'no' "))
+       tempThe_Rotten = tempThe_Rotten.lower()
+       tempThe_Project = tempThe_Project.lower()
+       tempDopplelganger = tempDopplelganger.lower()
+       playerDataFile.writelines("The Rotten unlocked? " + tempThe_Rotten + "\n")
+       playerDataFile.writelines("The Project unlocked? " + tempThe_Project + "\n")
+       playerDataFile.writelines("Dopplelganger unlocked? " + tempDopplelganger + "\n")
        playerDataFile.close()
        load()
 if currentDate > update:
@@ -83,8 +86,8 @@ elif currentDate > hint:
 temp = input ("do you want to reset your player DATA? (yes or no)")
 temp = temp.lower()
 if temp == "yes":
-       if os.path.exists("playerData.txt"):
-              os.remove("playerData.txt")
+       if os.path.exists("KillerData.txt"):
+              os.remove("KillerData.txt")
               print("file deleted exiting")
               time.sleep(1)
               quit()
@@ -98,14 +101,14 @@ while True:
        if 2+2 == 4:#char == "k" or char == "b":
               while correct == False:
                      num = random.randint(1,3) #random.randint(1,4)
-                     if num == 1 and spring == True:
-                            print ("springtrap")
+                     if num == 1 and The_Rotten == True:
+                            print ("The Rotten")
                             correct = True
-                     elif num == 2 and mimic == True:
-                            print ("the mimic")
+                     elif num == 2 and The_Project == True:
+                            print ("The Project")
                             correct = True
-                     elif num == 3 and spagetiMan == True:
-                            print ("enared")
+                     elif num == 3 and Dopplelganger == True:
+                            print ("Dopplelganger")
                             correct = True
                      # elif num == 4:
                      #        print ("puppet")
