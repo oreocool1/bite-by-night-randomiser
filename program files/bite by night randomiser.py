@@ -14,16 +14,26 @@ print ('''
 update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 10)
 currentDate = datetime.datetime.now()
-#if os.path.exists("playerData.txt"):
-#       playerDataFile = open("playerData.txt" , "r")
-#       playerData = playerDataFile.readlines()
-#       print("Player Data loaded...")
-#       time.sleep(1)
-#else:
-#       print("player data not found")
-#       with open("playerData.txt", "x") as playerDataFile:
-#              ()
-#       playerDataFile = open("playerData.txt" , "w")
+# if os.path.exists("playerData.txt"):
+#        playerDataFile = open("playerData.txt" , "r")
+#        playerData = playerDataFile.readlines()
+#        print("Player Data loaded...")
+#        time.sleep(1)
+# else:
+#        print("player data not found")
+#        with open("playerData.txt", "x") as playerDataFile:
+#               ()
+#        playerDataFile = open("playerData.txt" , "w")
+#        print("Hi i cant find your player data this means we have to create one please answer these quick questions")
+#        tempSpring = str(input("Do you have Springtrap| please say 'yes' or 'no'"))
+#        tempmimic = str(input("do you have da mimic|please say 'yes' or 'no'"))
+#        tempenared = str(input("do you have enared | please say 'yes' or 'no' "))
+#        tempenared = tempenared.lower()
+#        tempSpring = tempSpring.lower()
+#        tempmimic = tempmimic.lower()
+#        playerDataFile.write("s" , tempSpring , "\n")
+#        playerDataFile.write("m" , tempmimic , "\n")
+#        playerDataFile.write("e" , tempenared , "\n")
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        end = input("click enter to exit")
