@@ -2,11 +2,37 @@ import random
 import time
 import datetime
 import os
+# def load():
+#        global spring,playerData
+#        playerDataFile = open("playerData.txt")
+#        playerData = playerDataFile.readlines()
+#        print("Player Data loaded...")
+#        print(playerData)
+#        spring = (playerData[0])
+#        spring = spring.lower()
+#        print(spring)
+#        # mimic = (playerData[1])
+#        # print(mimic)
+#        # spagetiMan = (playerData[2])
+#        # print(spagetiMan)
+#        playerDataFile.close()
+#        if spring == "yes":
+#               spring = True
+#        else:
+#               print("error")
+#        # if mimic == "mimic unlocked? yes":
+#        #        mimic = True
+#        # if spagetiMan == "eneee unlocked? yes":
+#        #        spagetiMan == True
+#        print(spring)
+#        # print(mimic)
+#        # print(spagetiMan)
+#        time.sleep(1)
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
-       🟪 Welcome to Bite by night randomiser V2 🟪
+       🟪 Welcome to Bite by night randomiser V3 🟪
        🟪🟪🟪🟪🟪🟪🟪 this is a wip  🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -15,11 +41,7 @@ update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 10)
 currentDate = datetime.datetime.now()
 # if os.path.exists("playerData.txt"):
-#        with open("playerData.txt" , "r") as playerDataFile:
-#               playerData = playerDataFile.read()
-#        print("Player Data loaded...")
-#        print(playerData)
-#        time.sleep(1)
+#        load()
 # else:
 #        print("player data not found")
 #        with open("playerData.txt", "x") as playerDataFile:
@@ -32,10 +54,11 @@ currentDate = datetime.datetime.now()
 #        tempSpring = tempSpring.lower()
 #        tempmimic = tempmimic.lower()
 #        tempenared = tempenared.lower()
-#        playerDataFile.writelines("spring" + tempSpring + os.linesep)
-#        playerDataFile.writelines("mimic" + tempmimic + os.linesep)
-#        playerDataFile.writelines("eneee" + tempenared + os.linesep)
+#        playerDataFile.writelines("spring unlocked? " + tempSpring + "\n")
+#        playerDataFile.writelines("mimic unlocked? " + tempmimic + "\n")
+#        playerDataFile.writelines("eneee unlocked? " + tempenared + "\n")
 #        playerDataFile.close()
+#        load()
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        end = input("click enter to exit")
