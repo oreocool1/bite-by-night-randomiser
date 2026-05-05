@@ -41,19 +41,13 @@ while 2+2 == 4:
                      num = random.randint(1,3)
                      if num == 1:
                             print ("springtrap")
-                            #temp = 1 #random.randint(1,2)
-                            #if temp == 1:
-                            #print ("skin:into the pit")
-                            #else:
-                            #     print("error")
                             correct = True
                      elif num == 2:
                             print ("the mimic")
                             correct == True
                      elif num == 3:
-                                   print ("enared")
-                                   correct ==True
-                                   #temp = random.randint(1,2)
+                            print ("enared")
+                            correct ==True
                      else:
                             print("Error found retrying ...")
                             time.sleep(0.1)
