@@ -5,9 +5,10 @@ the file is currently a work in progress but a basic one will be posted
 --working--
 killer randomiser
 update timer
---in progress--
 player data
+--in progress--
 survivers 
+skins for characters
 --for future--
 puppet update
-skins for characters
+images for killers
