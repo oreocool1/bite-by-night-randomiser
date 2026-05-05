@@ -10,7 +10,7 @@ print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        ''')
-update = datetime.datetime(2026 , 5 , 5)
+update = datetime.datetime(2026 , 5 , 30)
 currentDate = datetime.datetime.now()
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
