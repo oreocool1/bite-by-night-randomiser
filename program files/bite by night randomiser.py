@@ -233,7 +233,7 @@ while True:
                             if decition == "skin load?yes\n":
                                    temp1 = False
                                    while temp1 == False:
-                                          temp = random.randint(0,3)
+                                          temp = random.randint(0,4)
                                           if temp == 0 and Toon == True:
                                                  print ("Skin: Toon")
                                                  temp1 = True
@@ -246,6 +246,8 @@ while True:
                                           elif temp == 3 and Hoax == True:
                                                  print("Skin:  Hoax")
                                                  temp1 = True
+                                          elif temp == 4:
+                                                 print("Skin:  original")
                                           else:
                                                  print("loading...")
                                                  time.sleep(0.1)
