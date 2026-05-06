@@ -174,6 +174,22 @@ else:
                      else:
                             for x in range(2):
                                    skinDataFile.write("The project isnt unllocked\n")
+                     # if Dopplelganger == True:
+                     #        Mime = input("Do you have the Mimic skin?")
+                     #        Spaghetti = input("Do you have the spaghetti skin?")
+                     #        molten = input("Do you have the Molten skin?")
+                     #        Anomaly = input ("Do you have the Anomaly skin?")
+                     #        Mime = Mime.lower()
+                     #        Spaghetti = Spaghetti.lower()
+                     #        molten = molten.lower()
+                     #        Anomaly = Anomaly.lower()
+                     #        skinDataFile.writelines("Mime unlocked?" + Mime + "\n")
+                     #        skinDataFile.writelines("Spaghetti unlocked?" + Spaghetti + "\n")
+                     #        skinDataFile.writelines("Molten unlocked?" + molten + "\n")
+                     #        skinDataFile.writelines("Anomaly unlocked?" + Anomaly + "\n")
+                     # else:
+                     #        for x in range(4):
+                     #               skinDataFile.write("Doppleganger isnt unlocked\n")
        else:
               with open ("skinData.txt","a") as skinDataFile:
                      print("No has been selected")
