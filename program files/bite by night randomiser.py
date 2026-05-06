@@ -2,7 +2,7 @@ import random
 import time
 import datetime
 import os
-def load():
+def loadKiller():
        global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
        playerDataFile = open("KillerData.txt")
@@ -64,7 +64,7 @@ update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 10)
 currentDate = datetime.datetime.now()
 if os.path.exists("KillerData.txt"):
-       load()
+       loadKiller()
 else:
        print("player data not found")
        with open("KillerData.txt", "x") as playerDataFile:
@@ -82,7 +82,7 @@ else:
        playerDataFile.writelines("Dopplelganger unlocked? " + tempDopplelganger + "\n")
        playerDataFile.close()
        print("file closed")
-       load()
+       loadKiller()
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        end = input("click enter to exit")
