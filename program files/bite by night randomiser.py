@@ -48,12 +48,18 @@ def loadKiller():
               time.sleep(1)
               quit()
 
-# def loadskin():
-#        global skin1,skin2,skin3
-#        skin1 =""
-#        skin2 = ""
-#        skin3 = ""
-#        time.sleep(1)
+def loadskin():
+       playerSkinFile = open ("skinData.txt")
+       playerSkinData = playerSkinFile.readlines()
+       if len(playerSkinData) < 5:
+              print("error")
+              quit()
+       decition = (playerSkinData[1])
+       if decition == "yes":
+              ()
+       else:
+              print("skin randomiser off")
+       time.sleep(1)
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -64,7 +70,7 @@ print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        ''')
 print("loading...")
-time.sleep(2.5)
+# time.sleep(2.5)
 update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 8)
 currentDate = datetime.datetime.now()
@@ -88,18 +94,37 @@ else:
        playerDataFile.close()
        print("file closed")
        loadKiller()
-# if os.path.exists("skinData.txt"):
-#        loadskin()
-# else:
-#        with open ("skinData.txt", "x") as skinDataFile:
-#               ()
-#        temp = input("Do you want to add your skins to the randomiser?")
-#        print (temp) #dev tool
-#        if temp.lower() == "yes":
-#               print("okay it seems we dont have your skins on file answer these questions to make a new one")
-#               with open ("skinData.txt") as skinDataFile:
-#                      skin1 = input("do you have this skin?")
-#                      skin2 = input("do you have this skin?")
+if os.path.exists("skinData.txt"):
+       loadskin()
+else:
+       with open ("skinData.txt", "x") as skinDataFile:
+              ()
+       skinDataFile = open ("skinData.txt","w")
+       temp = input("Do you want to add your skins to the randomiser?")
+       print (temp) #dev tool
+       temp = temp.lower()
+       skinDataFile.writelines(temp + "\n")
+       if temp.lower() == "yes":
+              skinDataFile.close()
+              print("okay it seems we dont have your skins on file answer these questions to make a new one")
+              with open ("skinData.txt","w") as skinDataFile:
+                     Toon = input("Do you have the Toon skin?")
+                     Spartan = input("Do you have the Spartan skin?")
+                     PitRabbit = input("Do you have Pit Rabbit?")
+                     Hoax = input("Do you have the Hoax skin?")
+                     Toon = Toon.lower()
+                     Spartan = Spartan.lower()
+                     PitRabbit = PitRabbit.lower()
+                     Hoax = Hoax.lower()
+                     skinDataFile.writelines("Toon unlocked?" + Toon + "\n")
+                     skinDataFile.writelines("Spartan unlocked?" + Spartan + "\n")
+                     skinDataFile.writelines("PitRabbit unlocked?" + PitRabbit + "\n")
+                     skinDataFile.writelines("Hoax unlocked?" + Hoax + "\n")
+              loadskin()
+       else:
+              print("No has been selected")
+              for x in range (4):
+                     skinDataFile.write("empty\n")
 
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
