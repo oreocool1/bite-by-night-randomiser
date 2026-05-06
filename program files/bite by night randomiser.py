@@ -162,6 +162,11 @@ else:
                      skinDataFile.writelines("Spartan unlocked?" + Spartan + "\n")
                      skinDataFile.writelines("PitRabbit unlocked?" + PitRabbit + "\n")
                      skinDataFile.writelines("Hoax unlocked?" + Hoax + "\n")
+                     # if The_Project == True:
+                     #        ()
+                     # else:
+                     #        for x in range(4):
+                     #               skinDataFile.write("The project isnt unllocked\n")
               loadskin()
        else:
               with open ("skinData.txt","a") as skinDataFile:
