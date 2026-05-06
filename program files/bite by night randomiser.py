@@ -7,9 +7,14 @@ def load():
        count = 0
        playerDataFile = open("KillerData.txt")
        playerData = playerDataFile.readlines()
+       if len(playerData) < 3:
+              print("There is an error with your file")
+              playerDataFile.close()
+              os.remove("killerData.txt")
+              quit()
        print("Player Data loaded...")
        print(playerData)
-       playerDataFile
+       
        The_Rotten = (playerData[0])
        print(The_Rotten)
        The_Project = (playerData[1])
@@ -53,6 +58,8 @@ print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        ''')
+print("loading...")
+time.sleep(2.5)
 update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 10)
 currentDate = datetime.datetime.now()
@@ -74,6 +81,7 @@ else:
        playerDataFile.writelines("The Project unlocked? " + tempThe_Project + "\n")
        playerDataFile.writelines("Dopplelganger unlocked? " + tempDopplelganger + "\n")
        playerDataFile.close()
+       print("file closed")
        load()
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
