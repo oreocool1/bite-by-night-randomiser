@@ -66,7 +66,7 @@ print ('''
 print("loading...")
 time.sleep(2.5)
 update = datetime.datetime(2026 , 5 , 30)
-hint = datetime.datetime(2026 , 5 , 10)
+hint = datetime.datetime(2026 , 5 , 8)
 currentDate = datetime.datetime.now()
 if os.path.exists("KillerData.txt"):
        loadKiller()
