@@ -48,7 +48,7 @@ def loadKiller():
               quit()
 
 def loadskin():
-       global Toon,Spartan,PitRabbit,Hoax,decition
+       global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined
        with open ("skinData.txt") as playerSkinFile:
               print("--Skin Data loaded--")
               playerSkinprint = playerSkinFile.read()
@@ -66,37 +66,39 @@ def loadskin():
               Spartan = (playerSkinData[2])
               PitRabbit = (playerSkinData[3])
               Hoax = (playerSkinData[4])
-              count = 0
+              Aftermath = (playerSkinData[5])
+              Ruined = (playerSkinData[6])
               if Toon == "Toon unlocked?yes\n":
                      Toon = True
-                     count = count+1
               else:
                      Toon = False
               if Spartan == "Spartan unlocked?yes\n":
                      Spartan = True
-                     count = count+1
               else:
                      Spartan = False
               if PitRabbit =="PitRabbit unlocked?yes\n":
                      PitRabbit = True
-                     count = count+1
               else:
                      PitRabbit = False
               if Hoax == "Hoax unlocked?yes\n":
                      Hoax = True
-                     count = count+1
               else:
                      Hoax = False
+              if Aftermath == "Aftermath unlocked?yes\n":
+                     Aftermath = True
+              else:
+                     Aftermath = False
+              if Ruined == "Ruined unlocked?yes\n":
+                     Ruined = True
+              else:
+                     Ruined = False
               
               # print (Toon) #dev tool
               # print(Spartan) # dev tool
               # print(PitRabbit) # dev tool
               # print(Hoax) # dev tool
-              # print(count) # dev tool
-              if count == 0:
-                     print("error")
-                     playerSkinFile.close()
-                     os.remove("skinData.txt")
+              # print(Aftermath)# dev tool
+              # print(Ruined)# dev tool
        else:
               print("skin randomiser off")
        time.sleep(1)
@@ -162,17 +164,22 @@ else:
                      skinDataFile.writelines("Spartan unlocked?" + Spartan + "\n")
                      skinDataFile.writelines("PitRabbit unlocked?" + PitRabbit + "\n")
                      skinDataFile.writelines("Hoax unlocked?" + Hoax + "\n")
-                     # if The_Project == True:
-                     #        ()
-                     # else:
-                     #        for x in range(4):
-                     #               skinDataFile.write("The project isnt unllocked\n")
-              loadskin()
+                     if The_Project == True:
+                            Aftermath = input ("do you have the Aftermath skin? ")
+                            Ruined = input ("do you have the Ruined skin? ")
+                            Aftermath = Aftermath.lower()
+                            Ruined = Ruined.lower()
+                            skinDataFile.writelines("Aftermath unlocked?" + Aftermath + "\n")
+                            skinDataFile.writelines("Ruined unlocked?" + Ruined + "\n")
+                     else:
+                            for x in range(2):
+                                   skinDataFile.write("The project isnt unllocked\n")
        else:
               with open ("skinData.txt","a") as skinDataFile:
                      print("No has been selected")
                      for x in range (4):
                             skinDataFile.write("empty\n")
+       loadskin()
 
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
@@ -248,12 +255,29 @@ while True:
                                                  temp1 = True
                                           elif temp == 4:
                                                  print("Skin:  original")
+                                                 temp1 = True
                                           else:
                                                  print("loading...")
                                                  time.sleep(0.1)
                             correct = True
                      elif num == 2 and The_Project == True:
                             print ("The Project")
+                            if decition == "skin load?yes\n":
+                                   temp1 = False
+                                   while temp1 == False:
+                                          temp = random.randint(0,2)
+                                          if temp == 0 and Aftermath == True:
+                                                 print("Skin:  Aftermath")
+                                                 temp1 = True
+                                          elif temp == 1 and Ruined == True:
+                                                 print("Skin: Ruined")
+                                                 temp1 = True
+                                          elif temp == 2:
+                                                 print("Skin:  Original")
+                                                 temp1 = True
+                                          else:
+                                                 print("Loading...")
+                                                 time.sleep(0.1)
                             correct = True
                      elif num == 3 and Dopplelganger == True:
                             print ("Dopplelganger")
