@@ -37,10 +37,10 @@ def loadKiller():
               count = count + 1
        else:
               Dopplelganger = False
-       # print(The_Rotten)
-       # print(The_Project)
-       # print (Dopplelganger)
-       # print(count)
+       # print(The_Rotten) #dev tool
+       # print(The_Project) # dev tool
+       # print (Dopplelganger) # dev tool
+       # print(count) # dev tool
        if count == 0:
               print("ERROR NO CHARACTERS SELECTED")
               os.remove("KillerData.txt")
@@ -48,7 +48,12 @@ def loadKiller():
               time.sleep(1)
               quit()
 
-       time.sleep(1)
+# def loadskin():
+#        global skin1,skin2,skin3
+#        skin1 =""
+#        skin2 = ""
+#        skin3 = ""
+#        time.sleep(1)
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -83,6 +88,19 @@ else:
        playerDataFile.close()
        print("file closed")
        loadKiller()
+# if os.path.exists("skinData.txt"):
+#        loadskin()
+# else:
+#        with open ("skinData.txt", "x") as skinDataFile:
+#               ()
+#        temp = input("Do you want to add your skins to the randomiser?")
+#        print (temp) #dev tool
+#        if temp.lower() == "yes":
+#               print("okay it seems we dont have your skins on file answer these questions to make a new one")
+#               with open ("skinData.txt") as skinDataFile:
+#                      skin1 = input("do you have this skin?")
+#                      skin2 = input("do you have this skin?")
+
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        end = input("click enter to exit")
