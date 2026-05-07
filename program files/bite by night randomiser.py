@@ -48,7 +48,7 @@ def loadKiller():
               quit()
 
 def loadskin():
-       global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined
+       global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined,Mime,Spaghetti,molten,Anomaly
        with open ("skinData.txt") as playerSkinFile:
               print("--Skin Data loaded--")
               playerSkinprint = playerSkinFile.read()
@@ -68,6 +68,10 @@ def loadskin():
               Hoax = (playerSkinData[4])
               Aftermath = (playerSkinData[5])
               Ruined = (playerSkinData[6])
+              Mime = (playerSkinData[7])
+              Spaghetti = (playerSkinData[8])
+              molten = (playerSkinData[9])
+              Anomaly = (playerSkinData[10])
               if Toon == "Toon unlocked?yes\n":
                      Toon = True
               else:
@@ -92,6 +96,22 @@ def loadskin():
                      Ruined = True
               else:
                      Ruined = False
+              if Mime == "Mime unlocked?yes\n":
+                     Mime = True
+              else:
+                     Mime = False
+              if Spaghetti == "Spaghetti unlocked?yes\n":
+                     Spaghetti = True
+              else:
+                     Spaghetti = False
+              if molten == "Molten unlocked?yes\n":
+                     molten = True
+              else:
+                     molten = False
+              if Anomaly == "Anomaly unlocked?yes\n":
+                     Anomaly = True
+              else:
+                     Anomaly = False
               
               # print (Toon) #dev tool
               # print(Spartan) # dev tool
@@ -99,6 +119,10 @@ def loadskin():
               # print(Hoax) # dev tool
               # print(Aftermath)# dev tool
               # print(Ruined)# dev tool
+              # print(Mime)#dev tool
+              # print(Spaghetti)#dev tool
+              # print(molten)#dev tool
+              # print(Anomaly)#dev tool
        else:
               print("skin randomiser off")
        time.sleep(1)
@@ -174,22 +198,22 @@ else:
                      else:
                             for x in range(2):
                                    skinDataFile.write("The project isnt unllocked\n")
-                     # if Dopplelganger == True:
-                     #        Mime = input("Do you have the Mimic skin?")
-                     #        Spaghetti = input("Do you have the spaghetti skin?")
-                     #        molten = input("Do you have the Molten skin?")
-                     #        Anomaly = input ("Do you have the Anomaly skin?")
-                     #        Mime = Mime.lower()
-                     #        Spaghetti = Spaghetti.lower()
-                     #        molten = molten.lower()
-                     #        Anomaly = Anomaly.lower()
-                     #        skinDataFile.writelines("Mime unlocked?" + Mime + "\n")
-                     #        skinDataFile.writelines("Spaghetti unlocked?" + Spaghetti + "\n")
-                     #        skinDataFile.writelines("Molten unlocked?" + molten + "\n")
-                     #        skinDataFile.writelines("Anomaly unlocked?" + Anomaly + "\n")
-                     # else:
-                     #        for x in range(4):
-                     #               skinDataFile.write("Doppleganger isnt unlocked\n")
+                     if Dopplelganger == True:
+                            Mime = input("Do you have the Mimic skin?")
+                            Spaghetti = input("Do you have the spaghetti skin?")
+                            molten = input("Do you have the Molten skin?")
+                            Anomaly = input ("Do you have the Anomaly skin?")
+                            Mime = Mime.lower()
+                            Spaghetti = Spaghetti.lower()
+                            molten = molten.lower()
+                            Anomaly = Anomaly.lower()
+                            skinDataFile.writelines("Mime unlocked?" + Mime + "\n")
+                            skinDataFile.writelines("Spaghetti unlocked?" + Spaghetti + "\n")
+                            skinDataFile.writelines("Molten unlocked?" + molten + "\n")
+                            skinDataFile.writelines("Anomaly unlocked?" + Anomaly + "\n")
+                     else:
+                            for x in range(4):
+                                   skinDataFile.write("Doppleganger isnt unlocked\n")
        else:
               with open ("skinData.txt","a") as skinDataFile:
                      print("No has been selected")
@@ -252,7 +276,6 @@ while True:
                      num = random.randint(1,3) #random.randint(1,4)
                      if num == 1 and The_Rotten == True:
                             print ("The Rotten")
-                            time.sleep(0.1)
                             if decition == "skin load?yes\n":
                                    temp1 = False
                                    while temp1 == False:
@@ -297,6 +320,28 @@ while True:
                             correct = True
                      elif num == 3 and Dopplelganger == True:
                             print ("Dopplelganger")
+                            if decition == "skin load?yes\n":
+                                   temp1 = False
+                                   while temp1 == False:
+                                          temp = random.randint(0,3)
+                                          if temp == 0 and Mime == True:
+                                                 print("Skin:  Mime")
+                                                 temp1 = True
+                                          elif temp == 1 and Spaghetti == True:
+                                                 print("Skin:  Spaghetti")
+                                                 temp1 = True
+                                          elif temp == 2 and molten == True:
+                                                 print("Skin: Molten")
+                                                 temp1 = True
+                                          elif temp == 3 and Anomaly == True:
+                                                 print("Skin: Anomaly")
+                                                 temp1 = True
+                                          elif temp == 4:
+                                                 print("SkinL original")
+                                                 temp1 = True
+                                          else:
+                                                 print("Loading...")
+                                                 time.sleep(0.1)
                             correct = True
                      # elif num == 4:
                      #        print ("puppet")
