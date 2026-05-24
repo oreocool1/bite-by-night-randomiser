@@ -135,11 +135,11 @@ print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        ''')
-for x in range(4):
-       print("loading...")
-       time.sleep(1)
-print("Loaded!\ncreated by oreocool1")
-time.sleep(1.5)
+# for x in range(4):
+#        print("loading...")
+#        time.sleep(1)
+# print("Loaded!\ncreated by oreocool1")
+# time.sleep(1.5)
 update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 8)
 currentDate = datetime.datetime.now()
@@ -147,8 +147,9 @@ if os.path.exists("KillerData.txt"):
        loadKiller()
 else:
        print("player data not found")
+       time.sleep(2)
        with open("KillerData.txt", "x") as playerDataFile:
-             ()
+              ()
        playerDataFile = open("KillerData.txt" , "w")
        print("Hi i cant find your player data this means we have to create one please answer these quick questions")
        tempThe_Rotten = "yes"#str(input("Do you have The Rotten| please say 'yes' or 'no'"))
