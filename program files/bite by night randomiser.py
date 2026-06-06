@@ -46,7 +46,6 @@ def loadKiller():
               print("player data deleted restarting")
               time.sleep(1)
               quit()
-
 def loadskin():
        global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined,Mime,Spaghetti,molten,Anomaly
        with open ("skinData.txt") as playerSkinFile:
