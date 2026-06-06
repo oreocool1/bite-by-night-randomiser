@@ -2,10 +2,11 @@ import random
 import time
 import datetime
 import os
+path = os.path
 def loadKiller():
        global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
-       with open ("killerData.txt") as playerDataFile:
+       with open (path + "\killerData.txt") as playerDataFile:
               playerData = playerDataFile.read()
               print ("--killer Data Loaded--")
               print(playerData)
@@ -142,8 +143,10 @@ print ('''
 update = datetime.datetime(2026 , 5 , 30)
 hint = datetime.datetime(2026 , 5 , 8)
 currentDate = datetime.datetime.now()
-if os.path.exists("KillerData.txt"):
-       loadKiller()
+if os.path.exists(path , "KillerData.txt"):
+       print("working")
+       time.sleep(100)
+       #loadKiller()
 else:
        print("player data not found")
        time.sleep(2)
