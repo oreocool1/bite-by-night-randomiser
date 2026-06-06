@@ -39,10 +39,10 @@ def loadKiller():
               count = count + 1
        else:
               Dopplelganger = False
-       print(The_Rotten) #dev tool
-       print(The_Project) # dev tool
-       print (Dopplelganger) # dev tool
-       print(count) # dev tool
+       # print(The_Rotten) #dev tool
+       # print(The_Project) # dev tool
+       # print (Dopplelganger) # dev tool
+       # print(count) # dev tool
        if count == 0:
               print("ERROR NO CHARACTERS SELECTED")
               os.remove(killerdata)
@@ -57,12 +57,12 @@ def loadskin():
               print(playerSkinprint)
        playerSkinFile = open (skinData)
        playerSkinData = playerSkinFile.readlines()
-       print(len(playerSkinData)) # dev tool
+       #print(len(playerSkinData)) # dev tool
        if len(playerSkinData) < 5:
               print("error")
               quit()
        decition = (playerSkinData[0])
-       print(decition)#dev tool
+       #print(decition)#dev tool
        if decition == "skin load?yes\n":
               Toon = (playerSkinData[1])
               Spartan = (playerSkinData[2])
@@ -115,16 +115,16 @@ def loadskin():
               else:
                      Anomaly = False
               
-              print (Toon) #dev tool
-              print(Spartan) # dev tool
-              print(PitRabbit) # dev tool
-              print(Hoax) # dev tool
-              print(Aftermath)# dev tool
-              print(Ruined)# dev tool
-              print(Mime)#dev tool
-              print(Spaghetti)#dev tool
-              print(molten)#dev tool
-              print(Anomaly)#dev tool
+              # print (Toon) #dev tool
+              # print(Spartan) # dev tool
+              # print(PitRabbit) # dev tool
+              # print(Hoax) # dev tool
+              # print(Aftermath)# dev tool
+              # print(Ruined)# dev tool
+              # print(Mime)#dev tool
+              # print(Spaghetti)#dev tool
+              # print(molten)#dev tool
+              # print(Anomaly)#dev tool
        else:
               print("skin randomiser off")
        time.sleep(1)
@@ -142,8 +142,8 @@ for x in range(4):
        time.sleep(1)
 print("Loaded!\ncreated by oreocool1")
 time.sleep(1.5)
-update = datetime.datetime(2026 , 5 , 30)
-hint = datetime.datetime(2026 , 5 , 8)
+update = datetime.datetime(2026 , 6 , 30)
+hint = datetime.datetime(2026 , 6 , 13)
 currentDate = datetime.datetime.now()
 if os.path.exists(killerdata):
        loadKiller()
@@ -175,7 +175,7 @@ else:
        temp = input("Do you want to add your skins to the randomiser?")
        temp = temp.lower()
        skinDataFile.writelines("skin load?" + temp + "\n")
-       print (temp) #dev tool
+       # print (temp) #dev tool
        if temp == "yes":
               print("okay it seems we dont have your skins on file answer these questions to make a new one")
               with open (skinData,"a") as skinDataFile:
@@ -298,9 +298,6 @@ while True:
                                           elif temp == 4:
                                                  print("Skin:  original")
                                                  temp1 = True
-                                          else:
-                                                 print("loading...")
-                                                 time.sleep(0.1)
                             correct = True
                      elif num == 2 and The_Project == True:
                             print ("The Project")
@@ -317,9 +314,6 @@ while True:
                                           elif temp == 2:
                                                  print("Skin:  Original")
                                                  temp1 = True
-                                          else:
-                                                 print("Loading...")
-                                                 time.sleep(0.1)
                             correct = True
                      elif num == 3 and Dopplelganger == True:
                             print ("Dopplelganger")
@@ -342,14 +336,11 @@ while True:
                                           elif temp == 4:
                                                  print("SkinL original")
                                                  temp1 = True
-                                          else:
-                                                 print("Loading...")
-                                                 time.sleep(0.1)
                             correct = True
-                     elif num == 4:
-                            print ("puppet")
+                     # elif num == 4:
+                     #        print ("puppet")
                      else:
                             print("Loading ...")
-                            time.sleep(0.1)
+                            time.sleep(0.01)
        else:
               print("Error please enter valid data")
