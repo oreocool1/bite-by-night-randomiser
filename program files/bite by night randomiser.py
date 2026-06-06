@@ -4,6 +4,7 @@ import datetime
 import os
 path = os.path.dirname(os.path.abspath(__file__))
 killerdata = f"{path}\killerdata.txt"
+skinData = f"{path}\skinData.txt"
 def loadKiller():
        global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
@@ -50,11 +51,11 @@ def loadKiller():
               quit()
 def loadskin():
        global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined,Mime,Spaghetti,molten,Anomaly
-       with open ("skinData.txt") as playerSkinFile:
+       with open (skinData) as playerSkinFile:
               print("--Skin Data loaded--")
               playerSkinprint = playerSkinFile.read()
               print(playerSkinprint)
-       playerSkinFile = open ("skinData.txt")
+       playerSkinFile = open (skinData)
        playerSkinData = playerSkinFile.readlines()
        print(len(playerSkinData)) # dev tool
        if len(playerSkinData) < 5:
@@ -165,19 +166,19 @@ else:
        playerDataFile.close()
        print("file closed")
        loadKiller()
-if os.path.exists("skinData.txt"):
+if os.path.exists(skinData):
        loadskin()
 else:
-       with open ("skinData.txt", "x") as skinDataFile:
+       with open (skinData, "x") as skinDataFile:
               ()
-       skinDataFile = open ("skinData.txt","w")
+       skinDataFile = open (skinData,"w")
        temp = input("Do you want to add your skins to the randomiser?")
        temp = temp.lower()
        skinDataFile.writelines("skin load?" + temp + "\n")
        print (temp) #dev tool
        if temp == "yes":
               print("okay it seems we dont have your skins on file answer these questions to make a new one")
-              with open ("skinData.txt","a") as skinDataFile:
+              with open (skinData,"a") as skinDataFile:
                      Toon = input("Do you have the Toon skin?")
                      Spartan = input("Do you have the Spartan skin?")
                      PitRabbit = input("Do you have Pit Rabbit?")
@@ -217,7 +218,7 @@ else:
                             for x in range(4):
                                    skinDataFile.write("Doppleganger isnt unlocked\n")
        else:
-              with open ("skinData.txt","a") as skinDataFile:
+              with open (skinData,"a") as skinDataFile:
                      print("No has been selected")
                      for x in range (4):
                             skinDataFile.write("empty\n")
@@ -243,8 +244,8 @@ if temp == "k":
               print("ERROR NO FILE EXSITS")
               quit()
 elif temp == "s":
-       if os.path.exists("skinData.txt"):
-              os.remove("skinData.txt")
+       if os.path.exists(skinData):
+              os.remove(skinData)
               print("skin data file deleted exiting")
               time.sleep(1)
               quit()
@@ -255,15 +256,15 @@ elif temp == "a":
        if os.path.exists(killerdata):
               os.remove(killerdata)
               print("killer data removed...")
-              if os.path.exists("skinData.txt"):
-                     os.remove("skinData.txt")
+              if os.path.exists(skinData):
+                     os.remove(skinData)
                      print("All data removed")
                      quit()
               else:
                      print("All data removed (skin data not located)")
                      quit()
-       elif os.path.exists("skinData.txt"):
-              os.remove("skinData.txt")
+       elif os.path.exists(skinData):
+              os.remove(skinData)
               print("All data removed(killer data not found)")
               quit()
        else:
