@@ -4,7 +4,7 @@ import datetime
 import os
 path = os.path.dirname(os.path.abspath(__file__))
 killerdata = f"{path}\killerdata.txt"
-skinData = f"{path}\skinData.txt"
+killerskinData = f"{path}\KillerskinData.txt"
 def loadKiller():
        global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
@@ -51,11 +51,11 @@ def loadKiller():
               quit()
 def loadskin():
        global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined,Mime,Spaghetti,molten,Anomaly
-       with open (skinData) as playerSkinFile:
+       with open (killerskinData) as playerSkinFile:
               print("--Skin Data loaded--")
               playerSkinprint = playerSkinFile.read()
               print(playerSkinprint)
-       playerSkinFile = open (skinData)
+       playerSkinFile = open (killerskinData)
        playerSkinData = playerSkinFile.readlines()
        #print(len(playerSkinData)) # dev tool
        if len(playerSkinData) < 5:
@@ -166,19 +166,19 @@ else:
        playerDataFile.close()
        print("file closed")
        loadKiller()
-if os.path.exists(skinData):
+if os.path.exists(killerskinData):
        loadskin()
 else:
-       with open (skinData, "x") as skinDataFile:
+       with open (killerskinData, "x") as skinDataFile:
               ()
-       skinDataFile = open (skinData,"w")
+       skinDataFile = open (killerskinData,"w")
        temp = input("Do you want to add your skins to the randomiser?")
        temp = temp.lower()
        skinDataFile.writelines("skin load?" + temp + "\n")
        # print (temp) #dev tool
        if temp == "yes":
               print("okay it seems we dont have your skins on file answer these questions to make a new one")
-              with open (skinData,"a") as skinDataFile:
+              with open (killerskinData,"a") as skinDataFile:
                      Toon = input("Do you have the Toon skin?")
                      Spartan = input("Do you have the Spartan skin?")
                      PitRabbit = input("Do you have Pit Rabbit?")
@@ -218,7 +218,7 @@ else:
                             for x in range(4):
                                    skinDataFile.write("Doppleganger isnt unlocked\n")
        else:
-              with open (skinData,"a") as skinDataFile:
+              with open (killerskinData,"a") as skinDataFile:
                      print("No has been selected")
                      for x in range (4):
                             skinDataFile.write("empty\n")
@@ -232,8 +232,8 @@ else:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
 #        print ("resuming program")
 #        time.sleep(1)
-# temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), all(a))")
-# temp = temp.lower()
+temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), all(a))")
+temp = temp.lower()
 if temp == "k":
        if os.path.exists(killerdata):
               os.remove(killerdata)
@@ -244,8 +244,8 @@ if temp == "k":
               print("ERROR NO FILE EXSITS")
               quit()
 elif temp == "s":
-       if os.path.exists(skinData):
-              os.remove(skinData)
+       if os.path.exists(killerskinData):
+              os.remove(killerskinData)
               print("skin data file deleted exiting")
               time.sleep(1)
               quit()
@@ -256,15 +256,15 @@ elif temp == "a":
        if os.path.exists(killerdata):
               os.remove(killerdata)
               print("killer data removed...")
-              if os.path.exists(skinData):
-                     os.remove(skinData)
+              if os.path.exists(killerskinData):
+                     os.remove(killerskinData)
                      print("All data removed")
                      quit()
               else:
                      print("All data removed (skin data not located)")
                      quit()
-       elif os.path.exists(skinData):
-              os.remove(skinData)
+       elif os.path.exists(killerskinData):
+              os.remove(killerskinData)
               print("All data removed(killer data not found)")
               quit()
        else:
@@ -320,7 +320,7 @@ while True:
                             if decition == "skin load?yes\n":
                                    temp1 = False
                                    while temp1 == False:
-                                          temp = random.randint(0,3)
+                                          temp = random.randint(0,4)
                                           if temp == 0 and Mime == True:
                                                  print("Skin:  Mime")
                                                  temp1 = True
@@ -334,7 +334,7 @@ while True:
                                                  print("Skin: Anomaly")
                                                  temp1 = True
                                           elif temp == 4:
-                                                 print("SkinL original")
+                                                 print("Skin: original")
                                                  temp1 = True
                             correct = True
                      # elif num == 4:
