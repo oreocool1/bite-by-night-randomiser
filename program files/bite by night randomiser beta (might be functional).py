@@ -49,7 +49,7 @@ def loadKiller():
               print("player data deleted restarting")
               time.sleep(1)
               quit()
-def loadskin():
+def loadkillerskin():
        global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined,Mime,Spaghetti,molten,Anomaly
        with open (killerskinData) as playerSkinFile:
               print("--Skin Data loaded--")
@@ -167,7 +167,7 @@ else:
        print("file closed")
        loadKiller()
 if os.path.exists(killerskinData):
-       loadskin()
+       loadkillerskin()
 else:
        with open (killerskinData, "x") as skinDataFile:
               ()
@@ -222,7 +222,7 @@ else:
                      print("No has been selected")
                      for x in range (4):
                             skinDataFile.write("empty\n")
-       loadskin()
+       loadkillerskin()
 
 # if currentDate > update:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
