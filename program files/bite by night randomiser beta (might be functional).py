@@ -5,6 +5,7 @@ import os
 path = os.path.dirname(os.path.abspath(__file__))
 killerdata = f"{path}\killerdata.txt"
 killerskinData = f"{path}\KillerskinData.txt"
+survdata = f"{path}\survdata.txt"
 def loadKiller():
        global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
@@ -128,6 +129,8 @@ def loadkillerskin():
        else:
               print("skin randomiser off")
        time.sleep(1)
+def loadsurv():
+       ()
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -223,6 +226,13 @@ else:
                      for x in range (4):
                             skinDataFile.write("empty\n")
        loadkillerskin()
+if os.path.exists(survdata):
+       loadsurv()
+else:
+       with open (survdata.txt , "x") as survSkinData:
+              ()
+       survSkinData = open(survdata.txt, "w")
+       print("it doesn't seem like you have any surviver data ill ask you some questions so we can add them")
 
 # if currentDate > update:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
