@@ -142,8 +142,8 @@ for x in range(4):
        time.sleep(1)
 print("Loaded!\ncreated by oreocool1")
 time.sleep(1.5)
-update = datetime.datetime(2026 , 6 , 30)
-hint = datetime.datetime(2026 , 6 , 13)
+update = datetime.datetime(2026 , 7 , 30)
+hint = datetime.datetime(2026 , 6 , 30)
 currentDate = datetime.datetime.now()
 if os.path.exists(killerdata):
        loadKiller()
