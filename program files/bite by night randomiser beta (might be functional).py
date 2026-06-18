@@ -142,9 +142,9 @@ for x in range(4):
        time.sleep(1)
 print("Loaded!\ncreated by oreocool1")
 time.sleep(1.5)
-update = datetime.datetime(2026 , 6 , 30)
-hint = datetime.datetime(2026 , 6 , 13)
-currentDate = datetime.datetime.now()
+# update = datetime.datetime(2026 , 6 , 30)
+# hint = datetime.datetime(2026 , 6 , 13)
+# currentDate = datetime.datetime.now()
 if os.path.exists(killerdata):
        loadKiller()
 else:
@@ -224,16 +224,16 @@ else:
                             skinDataFile.write("empty\n")
        loadskin()
 
-if currentDate > update:
-       print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
-       end = input("click enter to exit")
-       quit()
-elif currentDate > hint:
-       print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
-       print ("resuming program")
-       time.sleep(1)
-temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), all(a))")
-temp = temp.lower()
+# if currentDate > update:
+#        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+#        end = input("click enter to exit")
+#        quit()
+# elif currentDate > hint:
+#        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+#        print ("resuming program")
+#        time.sleep(1)
+# temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), all(a))")
+# temp = temp.lower()
 if temp == "k":
        if os.path.exists(killerdata):
               os.remove(killerdata)
