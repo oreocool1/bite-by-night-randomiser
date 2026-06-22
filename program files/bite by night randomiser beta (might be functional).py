@@ -130,7 +130,14 @@ def loadkillerskin():
               print("skin randomiser off")
        time.sleep(1)
 def loadsurv():
-       ()
+       with open (survdata) as survDataFile:
+              survData = survDataFile.read()
+              print("--surv data loaded--")
+              print(survData)
+              time.sleep(1.5)
+       survDataFile = open(survdata)
+       survData = survDataFile.readlines()
+       if len(survData) < 
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -242,6 +249,7 @@ else:
        SecurityGuard = SecurityGuard.lower()
        Fighter = Fighter.lower()
        Technician = Technician.lower()
+       survSkinData.writelines("Medic unlocked?" + Customer + "\n")
        survSkinData.writelines("Medic unlocked?" + Medic + "\n")
        survSkinData.writelines("Security Guard unlocked?" + SecurityGuard + "\n")
        survSkinData.writelines("Fighter unlocked?" + Fighter + "\n")
