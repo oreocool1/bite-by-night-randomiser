@@ -254,7 +254,7 @@ else:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
 #        print ("resuming program")
 #        time.sleep(1)
-temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), all(a))")
+temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), Surv_data(sv), all(a))")
 temp = temp.lower()
 if temp == "k":
        if os.path.exists(killerdata):
@@ -277,21 +277,22 @@ elif temp == "s":
 elif temp == "a":
        if os.path.exists(killerdata):
               os.remove(killerdata)
-              print("killer data removed...")
-              if os.path.exists(killerskinData):
-                     os.remove(killerskinData)
-                     print("All data removed")
-                     quit()
-              else:
-                     print("All data removed (skin data not located)")
-                     quit()
-       elif os.path.exists(killerskinData):
-              os.remove(killerskinData)
-              print("All data removed(killer data not found)")
-              quit()
+              print("killer data removed")
        else:
-              print("error no file exsists")
-              quit()
+              print("killer data not located")
+       if os.path.exists(survdata):
+              os.remove(survdata)
+              print("surv data removed")
+       else:
+              print("surv data not located")
+       if os.path.exists(killerskinData):
+              os.remove(killerskinData)
+              print("killer skin data removed")
+       else:
+              print("killer skin data not located")
+       print ("all data deleted or not located")
+       time.sleep(1)
+       quit()
 while True:
        char = input("select enter to choose a killer") #("do you need killer 'k', surviver's' or both 'b' ")
        char = char.lower()
