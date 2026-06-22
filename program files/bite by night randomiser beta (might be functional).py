@@ -246,6 +246,7 @@ else:
        survSkinData.writelines("Security Guard unlocked?" + SecurityGuard + "\n")
        survSkinData.writelines("Fighter unlocked?" + Fighter + "\n")
        survSkinData.writelines("technician unlocked?" + Technician + "\n")
+       survSkinData.close()
 # if currentDate > update:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
 #        end = input("click enter to exit")
@@ -270,6 +271,14 @@ elif temp == "s":
               os.remove(killerskinData)
               print("skin data file deleted exiting")
               time.sleep(1)
+              quit()
+       else:
+              print("ERROR NO FILE EXSITS")
+              quit()
+elif temp == "sv":
+       if os.path.exists(survdata):
+              os.remove(survdata)
+              print("surv data removed")
               quit()
        else:
               print("ERROR NO FILE EXSITS")
