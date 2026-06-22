@@ -234,11 +234,18 @@ else:
        survSkinData = open(survdata, "w")
        print("it doesn't seem like you have any surviver data ill ask you some questions so we can add them")
        Customer = "yes"
-       Medic = str(input("Do you have medic? | yes or no"))
-       SecurityGuard = str(input("Do you have Security Guard? | yes or no"))
-       Fighter = str(input("Do you have Fighter | yes or no"))
-       Technician = str(input("Do you have Technician | yes or no"))
-
+       Medic = str(input("Do you have medic? | yes or no "))
+       SecurityGuard = str(input("Do you have Security Guard? | yes or no "))
+       Fighter = str(input("Do you have Fighter | yes or no "))
+       Technician = str(input("Do you have Technician | yes or no "))
+       Medic = Medic.lower()
+       SecurityGuard = SecurityGuard.lower()
+       Fighter = Fighter.lower()
+       Technician = Technician.lower()
+       survSkinData.writelines("Medic unlocked?" + Medic + "\n")
+       survSkinData.writelines("Security Guard unlocked?" + SecurityGuard + "\n")
+       survSkinData.writelines("Fighter unlocked?" + Fighter + "\n")
+       survSkinData.writelines("technician unlocked?" + Technician + "\n")
 # if currentDate > update:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
 #        end = input("click enter to exit")

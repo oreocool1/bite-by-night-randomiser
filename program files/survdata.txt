@@ -1,0 +1,4 @@
+Medic unlocked?yes
+Security Guard unlocked?yes
+Fighter unlocked?yes
+technician unlocked?yes
