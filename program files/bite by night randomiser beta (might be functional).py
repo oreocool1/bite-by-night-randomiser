@@ -229,9 +229,9 @@ else:
 if os.path.exists(survdata):
        loadsurv()
 else:
-       with open (survdata.txt , "x") as survSkinData:
+       with open (survdata , "x") as survSkinData:
               ()
-       survSkinData = open(survdata.txt, "w")
+       survSkinData = open(survdata, "w")
        print("it doesn't seem like you have any surviver data ill ask you some questions so we can add them")
 
 # if currentDate > update:
