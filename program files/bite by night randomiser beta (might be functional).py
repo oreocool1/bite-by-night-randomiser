@@ -137,7 +137,21 @@ def loadsurv():
               time.sleep(1.5)
        survDataFile = open(survdata)
        survData = survDataFile.readlines()
-       if len(survData) < 
+       if len(survData) < 5:
+              print("there is an error with your file")
+              survDataFile.close()
+              os.remove(survData)
+              quit()
+       Customer = (survData[0])
+       Medic = (survData[1])
+       SecurityGuard = (survData[2])
+       Fighter = (survData[3])
+       Technician = (survData[4])
+       print (Customer)
+       print (Medic)
+       print (SecurityGuard)
+       print(Fighter)
+       print (Technician)
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
