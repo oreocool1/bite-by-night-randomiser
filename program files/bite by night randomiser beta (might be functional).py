@@ -269,6 +269,7 @@ else:
        survSkinData.writelines("Fighter unlocked?" + Fighter + "\n")
        survSkinData.writelines("technician unlocked?" + Technician + "\n")
        survSkinData.close()
+       loadsurv()
 # if currentDate > update:
 #        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
 #        end = input("click enter to exit")
