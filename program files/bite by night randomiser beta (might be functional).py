@@ -130,6 +130,7 @@ def loadkillerskin():
               print("skin randomiser off")
        time.sleep(1)
 def loadsurv():
+       global Medic,SecurityGuard,Customer,Fighter,Technician
        with open (survdata) as survDataFile:
               survData = survDataFile.read()
               print("--surv data loaded--")
@@ -147,11 +148,26 @@ def loadsurv():
        SecurityGuard = (survData[2])
        Fighter = (survData[3])
        Technician = (survData[4])
-       print (Customer)
-       print (Medic)
-       print (SecurityGuard)
-       print(Fighter)
-       print (Technician)
+       if Customer == "Customer unlocked?yes\n":
+              Customer = True
+       else:
+              Customer = False
+       if Medic == "Medic unlocked?yes\n":
+              Medic = True
+       else:
+              Medic = True
+       if SecurityGuard == "Security Guard unlocked?yes\n":
+              SecurityGuard = True
+       else:
+              SecurityGuard = False
+       if Fighter == "Fighter unlocked?yes\n":
+              Fighter = True
+       else:
+              Fighter = False
+       if Technician == "technician unlocked?yes\n":
+              Technician = True
+       else:
+              Technician = False
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -166,9 +182,9 @@ for x in range(4):
        time.sleep(1)
 print("Loaded!\ncreated by oreocool1")
 time.sleep(1.5)
-# update = datetime.datetime(2026 , 6 , 30)
-# hint = datetime.datetime(2026 , 6 , 13)
-# currentDate = datetime.datetime.now()
+update = datetime.datetime(2026 , 7 , 31)
+hint = datetime.datetime(2026 , 7 , 8)
+currentDate = datetime.datetime.now()
 if os.path.exists(killerdata):
        loadKiller()
 else:
@@ -263,21 +279,22 @@ else:
        SecurityGuard = SecurityGuard.lower()
        Fighter = Fighter.lower()
        Technician = Technician.lower()
-       survSkinData.writelines("Medic unlocked?" + Customer + "\n")
+       survSkinData.writelines("Customer unlocked?" + Customer + "\n")
        survSkinData.writelines("Medic unlocked?" + Medic + "\n")
        survSkinData.writelines("Security Guard unlocked?" + SecurityGuard + "\n")
        survSkinData.writelines("Fighter unlocked?" + Fighter + "\n")
        survSkinData.writelines("technician unlocked?" + Technician + "\n")
        survSkinData.close()
        loadsurv()
-# if currentDate > update:
-#        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
-#        end = input("click enter to exit")
-#        quit()
-# elif currentDate > hint:
-#        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
-#        print ("resuming program")
-#        time.sleep(1)
+if currentDate > update:
+       print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+       end = input("click enter to exit")
+       quit()
+elif currentDate > hint:
+       print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+       time.sleep(.5)
+       print ("resuming program")
+       time.sleep(1)
 temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), Surv_data(sv), all(a))")
 temp = temp.lower()
 if temp == "k":
@@ -326,10 +343,11 @@ elif temp == "a":
        time.sleep(1)
        quit()
 while True:
-       char = input("select enter to choose a killer") #("do you need killer 'k', surviver's' or both 'b' ")
+       char = ""
+       char = input("do you need killer 'k', surviver's' or both 'b' ")
        char = char.lower()
        correct = False
-       if 2+2 == 4:#char == "k" or char == "b":
+       if char == "k" or char == "b":
               while correct == False:
                      num = random.randint(1,3) #random.randint(1,4)
                      if num == 1 and The_Rotten == True:
@@ -392,10 +410,46 @@ while True:
                                                  print("Skin: original")
                                                  temp1 = True
                             correct = True
-                     # elif num == 4:
-                     #        print ("puppet")
                      else:
                             print("Loading ...")
                             time.sleep(0.01)
+              if char == "b":
+                     correct = False
+                     while correct != True:
+                            num = random.randint(1,5)
+                            if num == 1 and Customer == True:
+                                   print("Customer")
+                                   correct = True
+                            elif num == 2 and Medic == True:
+                                   print ("Medic")
+                                   correct = True
+                            elif num == 3 and SecurityGuard == True:
+                                   print("Security Guard")
+                                   correct = True
+                            elif num == 4 and Fighter == True:
+                                   print("Fighter")
+                                   correct = True
+                            elif num == 5 and Technician == True:
+                                   print("Technician")
+                                   correct = True
+       elif char == "s" :
+              correct = False
+              while correct != True:
+                     num = random.randint(1,5)
+                     if num == 1 and Customer == True:
+                            print("Customer")
+                            correct = True
+                     elif num == 2 and Medic == True:
+                            print ("Medic")
+                            correct = True
+                     elif num == 3 and SecurityGuard == True:
+                            print("Security Guard")
+                            correct = True
+                     elif num == 4 and Fighter == True:
+                            print("Fighter")
+                            correct = True
+                     elif num == 5 and Technician == True:
+                            print("Technician")
+                            correct = True
        else:
               print("Error please enter valid data")
