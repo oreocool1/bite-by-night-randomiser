@@ -4,7 +4,8 @@ import datetime
 import os
 path = os.path.dirname(os.path.abspath(__file__))
 killerdata = f"{path}\killerdata.txt"
-skinData = f"{path}\skinData.txt"
+killerskinData = f"{path}\KillerskinData.txt"
+survdata = f"{path}\survdata.txt"
 def loadKiller():
        global The_Rotten,playerData,The_Project,Dopplelganger,count
        count = 0
@@ -49,13 +50,13 @@ def loadKiller():
               print("player data deleted restarting")
               time.sleep(1)
               quit()
-def loadskin():
+def loadkillerskin():
        global Toon,Spartan,PitRabbit,Hoax,decition,Aftermath,Ruined,Mime,Spaghetti,molten,Anomaly
-       with open (skinData) as playerSkinFile:
+       with open (killerskinData) as playerSkinFile:
               print("--Skin Data loaded--")
               playerSkinprint = playerSkinFile.read()
               print(playerSkinprint)
-       playerSkinFile = open (skinData)
+       playerSkinFile = open (killerskinData)
        playerSkinData = playerSkinFile.readlines()
        #print(len(playerSkinData)) # dev tool
        if len(playerSkinData) < 5:
@@ -128,6 +129,45 @@ def loadskin():
        else:
               print("skin randomiser off")
        time.sleep(1)
+def loadsurv():
+       global Medic,SecurityGuard,Customer,Fighter,Technician
+       with open (survdata) as survDataFile:
+              survData = survDataFile.read()
+              print("--surv data loaded--")
+              print(survData)
+              time.sleep(1.5)
+       survDataFile = open(survdata)
+       survData = survDataFile.readlines()
+       if len(survData) < 5:
+              print("there is an error with your file")
+              survDataFile.close()
+              os.remove(survData)
+              quit()
+       Customer = (survData[0])
+       Medic = (survData[1])
+       SecurityGuard = (survData[2])
+       Fighter = (survData[3])
+       Technician = (survData[4])
+       if Customer == "Customer unlocked?yes\n":
+              Customer = True
+       else:
+              Customer = False
+       if Medic == "Medic unlocked?yes\n":
+              Medic = True
+       else:
+              Medic = True
+       if SecurityGuard == "Security Guard unlocked?yes\n":
+              SecurityGuard = True
+       else:
+              SecurityGuard = False
+       if Fighter == "Fighter unlocked?yes\n":
+              Fighter = True
+       else:
+              Fighter = False
+       if Technician == "technician unlocked?yes\n":
+              Technician = True
+       else:
+              Technician = False
 print ('''
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
        🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪🟪
@@ -142,8 +182,8 @@ for x in range(4):
        time.sleep(1)
 print("Loaded!\ncreated by oreocool1")
 time.sleep(1.5)
-update = datetime.datetime(2026 , 7 , 30)
-hint = datetime.datetime(2026 , 6 , 30)
+update = datetime.datetime(2026 , 7 , 31)
+hint = datetime.datetime(2026 , 7 , 8)
 currentDate = datetime.datetime.now()
 if os.path.exists(killerdata):
        loadKiller()
@@ -166,19 +206,19 @@ else:
        playerDataFile.close()
        print("file closed")
        loadKiller()
-if os.path.exists(skinData):
-       loadskin()
+if os.path.exists(killerskinData):
+       loadkillerskin()
 else:
-       with open (skinData, "x") as skinDataFile:
+       with open (killerskinData, "x") as skinDataFile:
               ()
-       skinDataFile = open (skinData,"w")
+       skinDataFile = open (killerskinData,"w")
        temp = input("Do you want to add your skins to the randomiser?")
        temp = temp.lower()
        skinDataFile.writelines("skin load?" + temp + "\n")
        # print (temp) #dev tool
        if temp == "yes":
               print("okay it seems we dont have your skins on file answer these questions to make a new one")
-              with open (skinData,"a") as skinDataFile:
+              with open (killerskinData,"a") as skinDataFile:
                      Toon = input("Do you have the Toon skin?")
                      Spartan = input("Do you have the Spartan skin?")
                      PitRabbit = input("Do you have Pit Rabbit?")
@@ -218,21 +258,44 @@ else:
                             for x in range(4):
                                    skinDataFile.write("Doppleganger isnt unlocked\n")
        else:
-              with open (skinData,"a") as skinDataFile:
+              with open (killerskinData,"a") as skinDataFile:
                      print("No has been selected")
                      for x in range (4):
                             skinDataFile.write("empty\n")
-       loadskin()
-
+       loadkillerskin()
+if os.path.exists(survdata):
+       loadsurv()
+else:
+       with open (survdata , "x") as survSkinData:
+              ()
+       survSkinData = open(survdata, "w")
+       print("it doesn't seem like you have any surviver data ill ask you some questions so we can add them")
+       Customer = "yes"
+       Medic = str(input("Do you have medic? | yes or no "))
+       SecurityGuard = str(input("Do you have Security Guard? | yes or no "))
+       Fighter = str(input("Do you have Fighter | yes or no "))
+       Technician = str(input("Do you have Technician | yes or no "))
+       Medic = Medic.lower()
+       SecurityGuard = SecurityGuard.lower()
+       Fighter = Fighter.lower()
+       Technician = Technician.lower()
+       survSkinData.writelines("Customer unlocked?" + Customer + "\n")
+       survSkinData.writelines("Medic unlocked?" + Medic + "\n")
+       survSkinData.writelines("Security Guard unlocked?" + SecurityGuard + "\n")
+       survSkinData.writelines("Fighter unlocked?" + Fighter + "\n")
+       survSkinData.writelines("technician unlocked?" + Technician + "\n")
+       survSkinData.close()
+       loadsurv()
 if currentDate > update:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
        end = input("click enter to exit")
        quit()
 elif currentDate > hint:
        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+       time.sleep(.5)
        print ("resuming program")
        time.sleep(1)
-temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), all(a))")
+temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), Surv_data(sv), all(a))")
 temp = temp.lower()
 if temp == "k":
        if os.path.exists(killerdata):
@@ -244,10 +307,18 @@ if temp == "k":
               print("ERROR NO FILE EXSITS")
               quit()
 elif temp == "s":
-       if os.path.exists(skinData):
-              os.remove(skinData)
+       if os.path.exists(killerskinData):
+              os.remove(killerskinData)
               print("skin data file deleted exiting")
               time.sleep(1)
+              quit()
+       else:
+              print("ERROR NO FILE EXSITS")
+              quit()
+elif temp == "sv":
+       if os.path.exists(survdata):
+              os.remove(survdata)
+              print("surv data removed")
               quit()
        else:
               print("ERROR NO FILE EXSITS")
@@ -255,26 +326,28 @@ elif temp == "s":
 elif temp == "a":
        if os.path.exists(killerdata):
               os.remove(killerdata)
-              print("killer data removed...")
-              if os.path.exists(skinData):
-                     os.remove(skinData)
-                     print("All data removed")
-                     quit()
-              else:
-                     print("All data removed (skin data not located)")
-                     quit()
-       elif os.path.exists(skinData):
-              os.remove(skinData)
-              print("All data removed(killer data not found)")
-              quit()
+              print("killer data removed")
        else:
-              print("error no file exsists")
-              quit()
+              print("killer data not located")
+       if os.path.exists(survdata):
+              os.remove(survdata)
+              print("surv data removed")
+       else:
+              print("surv data not located")
+       if os.path.exists(killerskinData):
+              os.remove(killerskinData)
+              print("killer skin data removed")
+       else:
+              print("killer skin data not located")
+       print ("all data deleted or not located")
+       time.sleep(1)
+       quit()
 while True:
-       char = input("select enter to choose a killer") #("do you need killer 'k', surviver's' or both 'b' ")
+       char = ""
+       char = input("do you need killer 'k', surviver's' or both 'b' ")
        char = char.lower()
        correct = False
-       if 2+2 == 4:#char == "k" or char == "b":
+       if char == "k" or char == "b":
               while correct == False:
                      num = random.randint(1,3) #random.randint(1,4)
                      if num == 1 and The_Rotten == True:
@@ -320,7 +393,7 @@ while True:
                             if decition == "skin load?yes\n":
                                    temp1 = False
                                    while temp1 == False:
-                                          temp = random.randint(0,3)
+                                          temp = random.randint(0,4)
                                           if temp == 0 and Mime == True:
                                                  print("Skin:  Mime")
                                                  temp1 = True
@@ -334,13 +407,49 @@ while True:
                                                  print("Skin: Anomaly")
                                                  temp1 = True
                                           elif temp == 4:
-                                                 print("SkinL original")
+                                                 print("Skin: original")
                                                  temp1 = True
                             correct = True
-                     # elif num == 4:
-                     #        print ("puppet")
                      else:
                             print("Loading ...")
                             time.sleep(0.01)
+              if char == "b":
+                     correct = False
+                     while correct != True:
+                            num = random.randint(1,5)
+                            if num == 1 and Customer == True:
+                                   print("Customer")
+                                   correct = True
+                            elif num == 2 and Medic == True:
+                                   print ("Medic")
+                                   correct = True
+                            elif num == 3 and SecurityGuard == True:
+                                   print("Security Guard")
+                                   correct = True
+                            elif num == 4 and Fighter == True:
+                                   print("Fighter")
+                                   correct = True
+                            elif num == 5 and Technician == True:
+                                   print("Technician")
+                                   correct = True
+       elif char == "s" :
+              correct = False
+              while correct != True:
+                     num = random.randint(1,5)
+                     if num == 1 and Customer == True:
+                            print("Customer")
+                            correct = True
+                     elif num == 2 and Medic == True:
+                            print ("Medic")
+                            correct = True
+                     elif num == 3 and SecurityGuard == True:
+                            print("Security Guard")
+                            correct = True
+                     elif num == 4 and Fighter == True:
+                            print("Fighter")
+                            correct = True
+                     elif num == 5 and Technician == True:
+                            print("Technician")
+                            correct = True
        else:
               print("Error please enter valid data")
