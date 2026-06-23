@@ -1,0 +1,4 @@
+Customer unlocked?yes
+Medic unlocked?yea
+Security Guard unlocked?no
+Fighter unlocked?yes
