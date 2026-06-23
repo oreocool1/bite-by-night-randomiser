@@ -141,7 +141,8 @@ def loadsurv():
        if len(survData) < 5:
               print("there is an error with your file")
               survDataFile.close()
-              os.remove(survData)
+              os.remove(survdata)
+              time.sleep(5)
               quit()
        Customer = (survData[0])
        Medic = (survData[1])
