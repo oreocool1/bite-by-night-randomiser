@@ -183,8 +183,8 @@ for x in range(4):
        time.sleep(1)
 print("Loaded!\ncreated by oreocool1")
 time.sleep(1.5)
-# update = datetime.datetime(2026 , 7 , 31)
-# hint = datetime.datetime(2026 , 7 , 8)
+update = datetime.datetime(2026 , 12 , 31)
+hint = datetime.datetime(2026 , 11 , 15)
 currentDate = datetime.datetime.now()
 if os.path.exists(killerdata):
        loadKiller()
@@ -287,15 +287,15 @@ else:
        survSkinData.writelines("technician unlocked?" + Technician + "\n")
        survSkinData.close()
        loadsurv()
-# if currentDate > update:
-#        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
-#        end = input("click enter to exit")
-#        quit()
-# elif currentDate > hint:
-#        print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
-#        time.sleep(.5)
-#        print ("resuming program")
-#        time.sleep(1)
+if currentDate > update:
+       print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+       end = input("click enter to exit")
+       quit()
+elif currentDate > hint:
+       print ("please update version https://github.com/oreocool1/bite-by-night-randomiser")
+       time.sleep(.5)
+       print ("resuming program")
+       time.sleep(1)
 temp = input ("do you want to reset your player DATA? (none(n), killer_data (k), Skin_data(s), Surv_data(sv), all(a))")
 temp = temp.lower()
 if temp == "k":
